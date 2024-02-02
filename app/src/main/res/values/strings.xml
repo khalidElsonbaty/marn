@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Marn Task</string>
+    <string name="main_navigation_fragment">main navigation fragment</string>
 </resources>
