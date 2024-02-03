@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".presentation.splash.SplashFragment">
+
+        <View
+            android:id="@+id/v_splash_background"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/v_logo_background"
+            android:layout_width="@dimen/_164sdp"
+            android:layout_height="@dimen/_164sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/iv_splash_logo"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_150sdp"
+            android:contentDescription="@string/splash_logo"
+            android:src="@drawable/ic_meal_logo"
+            app:layout_constraintBottom_toBottomOf="@id/v_logo_background"
+            app:layout_constraintEnd_toEndOf="@id/v_logo_background"
+            app:layout_constraintStart_toStartOf="@id/v_logo_background"
+            app:layout_constraintTop_toTopOf="@id/v_logo_background" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="category"
+            type="com.marn.task.domain.entity.Category" />
+
+        <import type="android.view.View" />
+    </data>
+
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_6sdp"
+    android:elevation="@dimen/_8sdp"
+    app:cardCornerRadius="@dimen/_8sdp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_category"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_margin="@dimen/_6sdp"
+            setImage="@{category.strCategoryThumb}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/category_image"
+            tools:src="@drawable/ic_meal_logo"/>
+
+        <TextView
+            android:id="@+id/tv_category_name"
+            style="@style/TextAppearance.Material3.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_6sdp"
+            android:text="@{category.strCategory}"
+            app:layout_constraintStart_toEndOf="@id/iv_category"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/category_name"
+            tools:text="@string/category_name" />
+
+        <TextView
+            android:id="@+id/tv_category_desc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_6sdp"
+            android:maxLines="3"
+            android:text="@{category.strCategoryDescription}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.031"
+            app:layout_constraintStart_toEndOf="@id/iv_category"
+            app:layout_constraintTop_toBottomOf="@id/tv_category_name"
+            android:contentDescription="@string/description"
+            tools:text="@string/description" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
+</layout>
