@@ -1,4 +1,10 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Marn Task</string>
     <string name="main_navigation_fragment">main navigation fragment</string>
+    <string name="splash_logo">splash_logo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="description">description</string>
+    <string name="category_name">Category Name</string>
+    <string name="category_image">Category Image</string>
 </resources>
