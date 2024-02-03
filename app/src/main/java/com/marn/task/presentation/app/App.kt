@@ -1,7 +1,6 @@
 package com.marn.task.presentation.app
 
 import android.content.Context
-import android.content.res.Configuration
 import androidx.multidex.BuildConfig
 import androidx.multidex.MultiDex
 import androidx.multidex.MultiDexApplication
