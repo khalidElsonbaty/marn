@@ -9,19 +9,27 @@
         android:name="com.marn.task.presentation.splash.SplashFragment"
         tools:layout="@layout/fragment_splash">
           <action
-            android:id="@+id/action_splashFragment_to_timelineFragment"
-            app:destination="@id/timelineFragment" />
+            android:id="@+id/action_splashFragment_to_mealsFragment"
+            app:destination="@id/mealsFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/timelineFragment"
+        android:id="@+id/mealsFragment"
         android:name="com.marn.task.presentation.meals.MealsFragment"
         tools:layout="@layout/fragment_meals">
-<!--
+
         <action
-            android:id="@+id/action_timelineFragment_to_chatListFragment"
-            app:destination="@id/chatListFragment" />
--->
+            android:id="@+id/action_MealsFragment_to_mealDetailsFragment"
+            app:destination="@id/mealDetailsFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/mealDetailsFragment"
+        android:name="com.marn.task.presentation.details.MealDetailsFragment"
+        tools:layout="@layout/fragment_meal_details">
+        <argument
+            android:name="category"
+            app:argType="com.marn.task.domain.entity.Category" />
     </fragment>
 
 </navigation>
