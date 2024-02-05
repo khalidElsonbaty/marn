@@ -1,10 +1,13 @@
 package com.marn.task.presentation.meals
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.marn.task.R
 import com.marn.task.databinding.CategoryItemBinding
 import com.marn.task.domain.entity.Category
 
@@ -22,6 +25,12 @@ class MealsAdapter : ListAdapter<Category, MealsAdapter.ViewHolder>(CategoryDiff
     class ViewHolder(private val binding: CategoryItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(category: Category) {
             binding.category = category
+            binding.root.setOnClickListener {
+                binding.root.findNavController().navigate(R.id.mealDetailsFragment, Bundle(1).apply {
+                    putParcelable("category", category)
+                })
+
+            }
         }
     }
     class CategoryDiffCallback : DiffUtil.ItemCallback<Category>() {
