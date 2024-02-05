@@ -7,5 +7,5 @@ import javax.inject.Inject
 
 @HiltViewModel
 class SplashViewModel @Inject constructor(): ViewModel() {
-    fun getNavigationScreen(): NavDirections {return SplashFragmentDirections.actionSplashFragmentToTimelineFragment()}
+    fun getNavigationScreen(): NavDirections {return SplashFragmentDirections.actionSplashFragmentToMealsFragment()}
 }
