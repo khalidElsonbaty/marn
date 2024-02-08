@@ -8,4 +8,6 @@
     <string name="category_name">Category Name</string>
     <string name="category_image">Category Image</string>
     <string name="share">Share</string>
+    <string name="device_doesn_t_support_bluetooth">Device doesn\'t support Bluetooth</string>
+    <string name="bluetooth_is_not_enabled">Bluetooth is not enabled</string>
 </resources>

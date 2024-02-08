@@ -22,6 +22,7 @@ import timber.log.Timber
 @AndroidEntryPoint
 class MealsFragment : Fragment() {
 
+    //use data binding for attach xml view with fragment in kotlin
     private lateinit var binding: FragmentMealsBinding
     private val viewModel: MealsViewModel by viewModels()
     private var mealsAdapter: MealsAdapter? = null
@@ -38,6 +39,7 @@ class MealsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        //init methods for setup view and retrieve data from server
         setUi()
         assignObservable()
         callList()
@@ -45,6 +47,7 @@ class MealsFragment : Fragment() {
 
 
     private fun setUi() {
+        //adapter initialization
         mealsAdapter = MealsAdapter()
         val linearLayoutManager = LinearLayoutManager(activity)
         binding.rvCategory.apply {
@@ -55,17 +58,17 @@ class MealsFragment : Fragment() {
     }
 
     private fun assignObservable() {
+        //assign observable from service response
         lifecycleScope.launch {
             viewModel.categories.collect {
-                Log.e(TAG,"assignObservable: %s"+ it.toString())
                 mealsAdapter?.submitList(it?.categories)
-                mealsAdapter?.notifyDataSetChanged()
             }
         }
 
     }
 
     private fun callList() {
+        //call api service
         viewModel.getMealsCategories()
     }
 }

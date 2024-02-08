@@ -20,13 +20,10 @@ class MealsViewModel @Inject constructor(private val getMealsUseCase:GetMeals): 
     private val _categories : MutableStateFlow<CategoryResponse?> = MutableStateFlow(null)
     val categories : StateFlow<CategoryResponse?> = _categories
     fun getMealsCategories(){
-        Log.e(ContentValues.TAG,"getMealsCategories")
         viewModelScope.launch {
             try {
-                Log.e(ContentValues.TAG,"getMealsCategories result")
                 _categories.value = getMealsUseCase()
             }catch (e:Exception) {
-                Log.e(ContentValues.TAG,e.message.toString())
                 Timber.e(e.message.toString())
             }
         }

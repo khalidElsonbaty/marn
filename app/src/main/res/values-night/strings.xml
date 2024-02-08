@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="device_doesn_t_support_bluetooth">Device doesn\'t support Bluetooth</string>
+</resources>
