@@ -1,6 +1,10 @@
 package com.marn.task.presentation.details
 
 import android.bluetooth.BluetoothAdapter
+import android.bluetooth.BluetoothDevice
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -41,6 +45,17 @@ class MealDetailsFragment : Fragment(), ClickHandler {
         binding.lifecycleOwner = viewLifecycleOwner
         viewModel._categoryDetails.value = category
         return binding.root
+    }
+    val discoveryReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context, intent: Intent) {
+            when (intent.action) {
+                BluetoothDevice.ACTION_FOUND -> {
+                    // Device found
+                    val device: BluetoothDevice? = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE)
+                    // Check if this is the device you want to connect to
+                }
+            }
+        }
     }
 
     override fun onShare() {
