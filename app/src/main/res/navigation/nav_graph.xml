@@ -32,4 +32,13 @@
             app:argType="com.marn.task.domain.entity.Category" />
     </fragment>
 
+    <fragment
+        android:id="@+id/shareFragment"
+        android:name="com.marn.task.presentation.share.ShareFragment"
+        tools:layout="@layout/fragment_share">
+        <argument
+            android:name="category"
+            app:argType="com.marn.task.domain.entity.Category" />
+    </fragment>
+
 </navigation>

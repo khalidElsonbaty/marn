@@ -94,7 +94,6 @@ class ShareFragment : Fragment() ,ClickHandler{
     }
 
     private fun sendDataFromSender(device: BluetoothDevice?) {
-
         val uuid: UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB") // Standard SerialPortService ID
         if (ActivityCompat.checkSelfPermission(
                 requireContext(),
@@ -113,10 +112,10 @@ class ShareFragment : Fragment() ,ClickHandler{
     }
 
     private fun receiveData() {
-        val inputStream: InputStream = socket?.inputStream!!
+        val inputStream: InputStream? = socket?.inputStream
         val buffer = ByteArray(1024)
-        val bytesRead: Int = inputStream.read(buffer)
-        val message = String(buffer, 0, bytesRead)
+        val bytesRead: Int? = inputStream?.read(buffer)
+        val message = bytesRead?.let { String(buffer, 0, it) }
         requireContext().showToast(message)
     }
 

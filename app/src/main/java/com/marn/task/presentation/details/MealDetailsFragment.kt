@@ -1,33 +1,19 @@
 package com.marn.task.presentation.details
 
-import android.Manifest
-import android.app.Activity
-import android.bluetooth.BluetoothAdapter
-import android.bluetooth.BluetoothDevice
-import android.bluetooth.BluetoothSocket
-import android.content.BroadcastReceiver
-import android.content.Context
-import android.content.Intent
-import android.content.IntentFilter
-import android.content.pm.PackageManager
+
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.marn.task.R
 import com.marn.task.databinding.FragmentMealDetailsBinding
 import com.marn.task.domain.entity.Category
-import com.marn.task.utils.ToastUtils.showToast
 import dagger.hilt.android.AndroidEntryPoint
-import java.io.InputStream
-import java.io.OutputStream
-import java.util.UUID
+
 
 @AndroidEntryPoint
 class MealDetailsFragment : Fragment(), ClickHandler {
@@ -61,6 +47,8 @@ class MealDetailsFragment : Fragment(), ClickHandler {
 
 
     override fun onShare() {
+            binding.root.findNavController().navigate(R.id.shareFragment, Bundle(1).apply {
+                putParcelable("category", viewModel.categoryDetails.value) })
 
     }
 
