@@ -10,4 +10,7 @@
     <string name="share">Share</string>
     <string name="device_doesn_t_support_bluetooth">Device doesn\'t support Bluetooth</string>
     <string name="bluetooth_is_not_enabled">Bluetooth is not enabled</string>
+    <string name="send">Send</string>
+    <string name="receive">Receive</string>
+    <string name="connect">Connect</string>
 </resources>
